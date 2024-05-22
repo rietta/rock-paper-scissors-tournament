@@ -1,0 +1,14 @@
+.display {
+  border: thick solid greenyellow;
+
+  padding: 1em;
+}
+
+.player {
+  background-color: lightblue;
+}
+
+.computer {
+  background-color: pink;
+}
+

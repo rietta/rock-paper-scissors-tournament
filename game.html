@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <script src="rockpaperscissors.js" language="javascript"></script>
+    <link rel="stylesheet" href="board.css" />
+  </head>
+  <body>
+
+    <h1>Let's Play a Game of Rock, Paper, Scissors!</h1>
+
+    <div class="display player" id="player_box">
+      <h2>Player</h2>
+      
+      <span id="player_choice"></span>
+    </div>
+
+    <div class="display computer" id="computer_box">
+      <h2>Computer</h2>
+      
+      <span id="computer_choice"></span>
+    </div>
+
+    <fieldset id="game-selection">
+      <legend>Player's Choice</legend>
+      <form id="player_choice_form">
+        <div>
+          <input type="radio" id="r1" name="item" value="rock"/> 
+          <label for="r1">Rock</label>
+        </div>
+       
+        <div>
+          <input type="radio" id="r2" name="item"value="paper"/> 
+          <label for="r2">Paper</label>
+        </div>
+       
+        <div>
+          <input type="radio" id="r3" name="item" value="scissors"/> 
+          <label for="r3">Scissors</label>
+        </div>
+        
+
+        <input type="submit" value="Play!" onclick="play();"/>
+      </form>
+    </section>
+
+  </body>
+</html>
