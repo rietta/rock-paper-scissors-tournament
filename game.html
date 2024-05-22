@@ -21,7 +21,7 @@
 
     <fieldset id="game-selection">
       <legend>Player's Choice</legend>
-      <form id="player_choice_form">
+      <form id="player_choice_form"  onsubmit="event.preventDefault(); play();">
         <div>
           <input type="radio" id="r1" name="item" value="rock"/> 
           <label for="r1">Rock</label>
@@ -38,7 +38,7 @@
         </div>
         
 
-        <input type="submit" value="Play!" onclick="play();"/>
+        <input type="submit" value="Play!"/>
       </form>
     </section>
 
