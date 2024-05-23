@@ -7,18 +7,59 @@
 
     <h1>Let's Play a Game of Rock, Paper, Scissors!</h1>
 
-    <div class="display player" id="player_box">
-      <h2>Player</h2>
-      
-      <span id="player_choice"></span>
-    </div>
+    <div class="game_stats_area">
 
-    <div class="display computer" id="computer_box">
-      <h2>Computer</h2>
-      
-      <span id="computer_choice"></span>
-    </div>
+      <div class="display player" id="player_box">
+        <h2>Player</h2>
+        
+        <span id="player_choice"></span>
+      </div>
 
+      <div class="display computer" id="computer_box">
+        <h2>Computer</h2>
+        
+        <span id="computer_choice"></span>
+      </div>
+
+      <div class="display leaderboard">
+        <table id="leaderboard-table">
+          <thead>
+            <tr>
+              <th>Match</th>
+              <th>Player</th>
+              <th>Computer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="m1row">
+              <td>1</td>
+              <td id="m1player"></td>
+              <td id="m1computer"></td>
+            </tr>
+
+            <tr id="m2row">
+              <td>2</td>
+              <td id="m2player"></td>
+              <td id="m2computer"></td>
+            </tr>
+
+            <tr id="m3row">
+              <td>3</td>
+              <td id="m3player"></td>
+              <td id="m3computer"></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr id="totals">
+              <td>Tot</td>
+              <td id="total_player">-</td>
+              <td id="total_computer">-</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    
     <fieldset id="game-selection">
       <legend>Player's Choice</legend>
       <form id="player_choice_form"  onsubmit="event.preventDefault(); play();">

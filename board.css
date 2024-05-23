@@ -1,6 +1,12 @@
+.game_stats_area {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+}
+
 .display {
   border: thick solid greenyellow;
-
+  box-shadow: 5px 5px 10px 2px gray;
   padding: 1em;
 }
 
@@ -12,3 +18,26 @@
   background-color: pink;
 }
 
+.leaderboard {
+  font-size: 0.25em;
+  table {
+    margin: 0.5em;
+    border: thin solid lightgray;
+    border-style: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: thin solid lightgray;
+    border-style: collapse;
+  }
+
+  th {
+    color: darkblue;
+    background-color: bisque;
+  }
+
+  td {
+    text-align: center;
+  }
+}

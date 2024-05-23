@@ -37,6 +37,19 @@ function winner(p1_choice, p2_choice) {
     return tie;
   }
 }
+
+function show_player_one_winner() {
+
+}
+
+function show_computer_winner() {
+
+}
+
+function show_tie() {
+  
+}
+
 function play() {
   // For perceived fairness, always pick the computer answer before reading
   // the user's choice
@@ -48,5 +61,14 @@ function play() {
 
   player_choice = document.getElementById('player_choice');
   player_choice.textContent = player_choice_val; 
+
+  result = winner(player_choice_val, computer_choice_val);
+  if (result === p1) {
+    show_player_one_winner();
+  } else if (result === p2) {
+    show_computer_winner();
+  } else {
+    show_tie();
+  }
 }
 
