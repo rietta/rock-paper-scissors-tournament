@@ -2,12 +2,16 @@
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  margin-bottom: 2em;
 }
 
 .display {
   border: thick solid greenyellow;
   box-shadow: 5px 5px 10px 2px gray;
   padding: 1em;
+  span {
+    font-size: 1.5em;
+  }
 }
 
 .player {
