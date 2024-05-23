@@ -6,7 +6,7 @@
 }
 
 .display {
-  border: thick solid greenyellow;
+  border: thick solid gray;
   box-shadow: 5px 5px 10px 2px gray;
   padding: 1em;
   span {
@@ -20,6 +20,10 @@
 
 .computer {
   background-color: pink;
+}
+
+.winner {
+  border-color: gold;
 }
 
 .leaderboard {
@@ -44,6 +48,12 @@
   td {
     text-align: center;
   }
+}
+
+.tournament_results {
+  font-size: 5em;
+  font-weight: bold;
+  text-align: center;
 }
 
 fieldset {

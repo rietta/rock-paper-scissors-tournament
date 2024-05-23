@@ -9,17 +9,16 @@
     <h1>Rock, Paper, Scissors Heat!</h1>
 
     <div class="game_stats_area">
-
-      <div class="display player" id="player_box">
+      <div class="display player winner" id="player_box">
         <h2>Player</h2>
         
-        <span id="player_choice"></span>
+        <span id="player_choice">scissors</span>
       </div>
 
       <div class="display computer" id="computer_box">
         <h2>Computer</h2>
         
-        <span id="computer_choice"></span>
+        <span id="computer_choice">paper</span>
       </div>
 
       <div class="display leaderboard">
@@ -34,31 +33,34 @@
           <tbody>
             <tr id="m1row">
               <td>1</td>
-              <td id="m1player"></td>
-              <td id="m1computer"></td>
+              <td id="m1player">1</td>
+              <td id="m1computer">0</td>
             </tr>
 
             <tr id="m2row">
               <td>2</td>
-              <td id="m2player"></td>
-              <td id="m2computer"></td>
+              <td id="m2player">0</td>
+              <td id="m2computer">0</td>
             </tr>
 
             <tr id="m3row">
               <td>3</td>
-              <td id="m3player"></td>
-              <td id="m3computer"></td>
+              <td id="m3player">1</td>
+              <td id="m3computer">0</td>
             </tr>
           </tbody>
           <tfoot>
             <tr id="totals">
               <td>Tot</td>
-              <td id="total_player">-</td>
-              <td id="total_computer">-</td>
+              <td id="total_player">2</td>
+              <td id="total_computer">0</td>
             </tr>
           </tfoot>
         </table>
       </div>
+    </div>
+    <div class="tournament_results">
+      <span id="winner">Player wins!</span>
     </div>
     
     <fieldset id="game-selection">
