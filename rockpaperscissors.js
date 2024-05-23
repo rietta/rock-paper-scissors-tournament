@@ -3,6 +3,10 @@ const tie = 0;
 const p1 = 1;
 const p2 = 2;
 
+const rock_emoji = "🪨";
+const paper_emoji = "📃";
+const scissors = "✂️";
+
 function computer_random_choice() {
   return  selection_options[(Math.random() * selection_options.length) | 0]
 }
@@ -47,7 +51,7 @@ function show_computer_winner() {
 }
 
 function show_tie() {
-  
+
 }
 
 function play() {

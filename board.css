@@ -9,9 +9,15 @@
   border: thick solid gray;
   box-shadow: 5px 5px 10px 2px gray;
   padding: 1em;
-  span {
+  text-align: center;
+
+  .icon {
+    font-size: 5em;
+  }
+  .label {
     font-size: 1.5em;
   }
+
 }
 
 .player {
@@ -58,4 +64,11 @@
 
 fieldset {
   font-size: 1.5em;
+
+  input[type=submit] {
+    margin-top: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: greenyellow;
+  }
 }
