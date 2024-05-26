@@ -57,6 +57,14 @@ function update_text_content(element_id, value) {
   element.textContent = value;
 }
 
+function update_choice_display(player_number, choice) {
+  
+}
+
+function reset_game() {
+
+}
+
 function play() {
   // For perceived fairness, always pick the computer answer before reading
   // the user's choice
