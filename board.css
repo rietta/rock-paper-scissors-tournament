@@ -32,6 +32,10 @@
   border-color: gold;
 }
 
+.tie {
+  border-color: red;
+}
+
 .leaderboard {
   font-size: 0.25em;
   table {
