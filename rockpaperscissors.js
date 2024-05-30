@@ -1,9 +1,66 @@
+/**
+ * Simple game of Rock, Paper, Scissors
+ *
+ * The purpose is to demonstrate that interactivity and usefulness are 
+ * very doable without the need to bring in a large volume of third party
+ * dependencies that then introduce security vulnerabilities and brittleness.
+ * As a simple single player game, it is meant to just be a fun, whimsical
+ * example.
+ *
+ * This educational example is written in pure JavaScript and CSS without 
+ * any frameworks. It uses the DOM to store game state.
+ * 
+ * The author is not primarily a JavaScript developer so choices in 
+ * variable names and style are the personal preference of the author
+ * and not meant to indicate the style that you should use. Consult with
+ * best practice 
+ * 
+ * Written by Frank Rietta
+ * Copyright (C) 2024 Rietta Inc. 
+ */
+
+/**
+ * Constants to avoid mystery values
+ */
 const selection_options = ['rock', 'paper', 'scissors'];
 const selection_icons = { 'rock': "🪨", "paper": "📃", "scissors": "✂️" };
 
 const tie = 0;
 const p1 = 1;
 const p2 = 2;
+
+/**
+ * Entry point methods called by buttons on the screen
+ */
+
+function play() {
+  // For perceived fairness, always pick the computer answer before reading
+  // the user's choice
+  computer_choice_val = computer_random_choice();
+  player_choice_val = player_selected_choice();
+  
+  reset_display();
+  update_choice_display(2, computer_choice_val);
+  update_choice_display(1, player_choice_val);
+
+  result = winner(player_choice_val, computer_choice_val);
+  if (result === tie) {
+    call_tie();
+  } else {
+    call_winner(result);
+  }
+
+  next_match();
+}
+
+function reset_game() {
+  reset_display();
+  reset_tournament_table();
+}
+
+/**
+ * Support methods that manage each turn
+ */
 
 function computer_random_choice() {
   return  selection_options[(Math.random() * selection_options.length) | 0]
@@ -113,11 +170,6 @@ function reset_tournament_table() {
   set_match_number(1);
 }
 
-function reset_game() {
-  reset_display();
-  reset_tournament_table();
-}
-
 function tournament_entry_id(player_number) {
   return "m" + get_match_number() + "p" + player_number;
 }
@@ -133,7 +185,7 @@ function call_winner(player_number) {
   if (player_number === p1) {
     update_tournament_table_row(1, 0);
   } else {
-    update_tournament_table_row(1, 0);
+    update_tournament_table_row(0, 1);
   }
 }
 
@@ -152,25 +204,3 @@ function next_match() {
     set_match_number(next_match_number);
   }
 }
-
-
-function play() {
-  // For perceived fairness, always pick the computer answer before reading
-  // the user's choice
-  computer_choice_val = computer_random_choice();
-  player_choice_val = player_selected_choice();
-  
-  reset_display();
-  update_choice_display(2, computer_choice_val);
-  update_choice_display(1, player_choice_val);
-
-  result = winner(player_choice_val, computer_choice_val);
-  if (result === tie) {
-    call_tie();
-  } else {
-    call_winner(result);
-  }
-
-  next_match();
-}
-
