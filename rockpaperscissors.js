@@ -58,7 +58,11 @@ function update_text_content(element_id, value) {
 }
 
 function update_choice_display(player_number, choice) {
+  icon_selector = "p" + player_number + "_choice_icon";
+  update_text_content(icon_selector, selection_icons[choice]);
   
+  label_selector = "p" + player_number + "_choice_label";
+  update_text_content(label_selector, choice);
 }
 
 function reset_game() {
