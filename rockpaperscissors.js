@@ -87,8 +87,21 @@ function reset_display() {
   update_choice_display(p2, "");
 }
 
+function reset_tournament_table() {
+  update_text_content('m1p1', '');
+  update_text_content('m1p2', '');
+  update_text_content('m2p1', '');
+  update_text_content('m2p2', '');
+  update_text_content('m3p1', '');
+  update_text_content('m3p2', '');
+  update_text_content('total_p1', '');
+  update_text_content('total_p2', '');
+  update_text_content('winner', '');
+}
+
 function reset_game() {
   reset_display();
+  reset_tournament_table();
 }
 
 

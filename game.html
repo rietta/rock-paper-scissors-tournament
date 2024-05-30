@@ -69,7 +69,7 @@
     
     <fieldset id="game-selection">
       <legend>Player's Choice</legend>
-      <form id="player_choice_form"  onsubmit="event.preventDefault(); play();">
+      <form id="player_choice_form"  onsubmit="javascript: event.preventDefault(); play();">
         <div>
           <input type="radio" id="r1" name="item" value="rock"/> 
           <label for="r1">🪨 Rock</label>
@@ -87,6 +87,7 @@
         
 
         <input type="submit" value="Shoot!"/>
+        <input type="reset" value="Reset" onclick="javascript: reset_game();"/>
       </form>
     </fieldset>
 
