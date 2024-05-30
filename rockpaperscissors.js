@@ -118,14 +118,39 @@ function reset_game() {
   reset_tournament_table();
 }
 
+function tournament_entry_id(player_number) {
+  return "m" + get_match_number() + "p" + player_number;
+}
+
+function update_tournament_table_row(p1_value, p2_value) {
+  update_text_content(tournament_entry_id(p1), p1_value);
+  update_text_content(tournament_entry_id(p2), p2_value);
+}
 
 function call_winner(player_number) {
   add_winner_border(player_number);
+
+  if (player_number === p1) {
+    update_tournament_table_row(1, 0);
+  } else {
+    update_tournament_table_row(1, 0);
+  }
 }
 
 function call_tie() {
   add_tie_border(p1);
   add_tie_border(p2);
+  update_tournament_table_row(0,0);
+}
+
+function next_match() {
+  next_match_number = get_match_number() + 1;
+  if(next_match_number > 3) {
+    update_text_content('winner', 'Done');
+    // todo: disable shoot button
+  } else {
+    set_match_number(next_match_number);
+  }
 }
 
 
@@ -140,12 +165,12 @@ function play() {
   update_choice_display(1, player_choice_val);
 
   result = winner(player_choice_val, computer_choice_val);
-  if (result === p1) {
-    call_winner(p1);
-  } else if (result === p2) {
-    call_winner(p2);
-  } else {
+  if (result === tie) {
     call_tie();
+  } else {
+    call_winner(result);
   }
+
+  next_match();
 }
 
