@@ -60,7 +60,7 @@ function update_text_content(element_id, value) {
 function update_choice_display(player_number, choice) {
   icon_selector = "p" + player_number + "_choice_icon";
   update_text_content(icon_selector, selection_icons[choice]);
-  
+
   label_selector = "p" + player_number + "_choice_label";
   update_text_content(label_selector, choice);
 }
@@ -75,16 +75,16 @@ function play() {
   computer_choice_val = computer_random_choice();
   player_choice_val = player_selected_choice();
   
-  update_text_content('computer_choice', computer_choice_val);
-  update_text_content('player_choice', player_choice_val);
+  update_choice_display(2, computer_choice_val);
+  update_choice_display(1, player_choice_val);
 
   result = winner(player_choice_val, computer_choice_val);
-  if (result === p1) {
-    show_player_one_winner();
-  } else if (result === p2) {
-    show_computer_winner();
-  } else {
-    show_tie();
-  }
+  // if (result === p1) {
+  //   show_player_one_winner();
+  // } else if (result === p2) {
+  //   show_computer_winner();
+  // } else {
+  //   show_tie();
+  // }
 }
 
