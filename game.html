@@ -22,7 +22,6 @@
         
         <span class="icon" id="p2_choice_icon">📃</span>
         <span class="label" id="p2_choice_label">paper</span>
-
       </div>
 
       <div class="display leaderboard">
@@ -63,10 +62,20 @@
         </table>
       </div>
     </div>
-    <div class="tournament_results">
-      <span id="winner">Player wins!</span>
+
+    <div class="headsup">
+      <div class="match_counter">
+        Match
+        <span id="current_match_number">3</span>
+        of
+        <span id="total_matches">3</span>
+      </div>
+  
+      <div class="tournament_results">
+        <span id="winner">Player wins!</span>
+      </div>
     </div>
-    
+   
     <fieldset id="game-selection">
       <legend>Player's Choice</legend>
       <form id="player_choice_form"  onsubmit="javascript: event.preventDefault(); play();">

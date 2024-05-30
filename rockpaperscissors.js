@@ -45,6 +45,19 @@ function update_text_content(element_id, value) {
   element.textContent = value;
 }
 
+function get_match_number() {
+  element = document.getElementById('current_match_number');
+  return Number(element.textContent);
+}
+
+function set_match_number(value) {
+  if (value >= 1 && value <= 3) {
+    update_text_content('current_match_number', value)
+  } else {
+    console.log("Error: Invalid match number specified.");
+  }
+}
+
 function update_choice_display(player_number, choice) {
 
   if (choice === "") {
@@ -97,6 +110,7 @@ function reset_tournament_table() {
   update_text_content('total_p1', '');
   update_text_content('total_p2', '');
   update_text_content('winner', '');
+  set_match_number(1);
 }
 
 function reset_game() {
