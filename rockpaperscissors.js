@@ -239,10 +239,23 @@ function set_ready_to_play(enabled) {
   button.disabled = !enabled;
 }
 
+function declare_tournament_result() {
+  p1_total = get_number_value('p1_total');
+  p2_total = get_number_value('p2_total');
+  if(p1_total === p2_total) {
+    msg = "Draw!";
+  } else if (p1_total > p2_total) {
+    msg = "Player 1 wins!";
+  } else {
+    msg = "Computer wins!";
+  }
+  update_text_content('winner', msg);
+}
+
 function next_match() {
   next_match_number = get_match_number() + 1;
   if(next_match_number > 3) {
-    update_text_content('winner', 'Done');
+    declare_tournament_result();
     set_ready_to_play(false);
   } else {
     set_match_number(next_match_number);
