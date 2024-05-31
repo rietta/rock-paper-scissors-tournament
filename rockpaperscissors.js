@@ -234,7 +234,6 @@ function call_tie() {
 }
 
 function set_ready_to_play(enabled) {
-  console.log("Changing shoot button status to " + enabled);
   button = document.getElementById('shoot_button');
   button.disabled = !enabled;
 }

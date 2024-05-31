@@ -81,24 +81,24 @@
     <fieldset id="game-selection">
       <legend>Player's Choice</legend>
       <form id="player_choice_form"  onsubmit="javascript: event.preventDefault(); play();">
-        <div>
+        <div class="field">
           <input type="radio" id="r1" name="item" value="rock"/> 
           <label for="r1">🪨 Rock</label>
         </div>
        
-        <div>
+        <div class="field">
           <input type="radio" id="r2" name="item"value="paper"/> 
           <label for="r2">📃 Paper</label>
         </div>
        
-        <div>
+        <div class="field">
           <input type="radio" id="r3" name="item" value="scissors"/> 
           <label for="r3">✂️ Scissors</label>
         </div>
         
 
         <input type="submit" value="Shoot!" id="shoot_button" disabled=true/>
-        <input type="reset" value="Reset" onclick="javascript: reset_game();"/>
+        <input type="reset" value="New Game" onclick="javascript: reset_game();"/>
       </form>
     </fieldset>
 

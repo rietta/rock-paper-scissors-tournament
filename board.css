@@ -67,12 +67,26 @@
 }
 
 fieldset {
-  font-size: 1.5em;
+  font-size: 2.0em;
+  .field {
+    margin: 0.2em;
+  }
 
   input[type=submit] {
     margin-top: 0.5em;
     font-size: 1em;
     font-weight: bold;
     background-color: greenyellow;
+    padding: 0.2em;
+
+  }
+
+  input[type=reset] {
+    margin-top: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: purple;
+    color: white;
+    padding: 0.2em;
   }
 }
