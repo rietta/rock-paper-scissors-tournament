@@ -113,9 +113,18 @@ function update_text_content(element_id, value) {
   element.textContent = value;
 }
 
+function get_number_value(element_id) {
+  element = document.getElementById(element_id);
+  value = element.textContent;
+  if (value === '') {
+    return 0;
+  } else {
+    return Number(value);
+  }
+}
+
 function get_match_number() {
-  element = document.getElementById('current_match_number');
-  return Number(element.textContent);
+  return get_number_value('current_match_number');
 }
 
 function set_match_number(value) {
@@ -175,19 +184,37 @@ function reset_tournament_table() {
   update_text_content('m2p2', '');
   update_text_content('m3p1', '');
   update_text_content('m3p2', '');
-  update_text_content('total_p1', '');
-  update_text_content('total_p2', '');
+  update_text_content('p1_total', '');
+  update_text_content('p2_total', '');
   update_text_content('winner', '');
   set_match_number(1);
 }
 
-function tournament_entry_id(player_number) {
-  return "m" + get_match_number() + "p" + player_number;
+function tournament_entry_id(player_number, match_number = 0) {
+  if (match_number <= 0 || match_number > 3) {
+    match_number = get_match_number();
+  }
+  return "m" + match_number + "p" + player_number;
 }
 
 function update_tournament_table_row(p1_value, p2_value) {
   update_text_content(tournament_entry_id(p1), p1_value);
   update_text_content(tournament_entry_id(p2), p2_value);
+  update_tournament_table_totals();
+}
+
+function compute_player_total(player_number) {
+  return get_number_value(tournament_entry_id(player_number, 1)) + 
+         get_number_value(tournament_entry_id(player_number, 2)) + 
+         get_number_value(tournament_entry_id(player_number, 3))
+}
+
+function update_tournament_table_totals() {
+  p1_total = compute_player_total(p1);
+  update_text_content('p1_total', p1_total);
+
+  p2_total = compute_player_total(p2);
+  update_text_content('p2_total', p2_total);
 }
 
 function call_winner(player_number) {
