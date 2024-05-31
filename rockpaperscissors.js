@@ -38,6 +38,11 @@ function play() {
   // the user's choice
   computer_choice_val = computer_random_choice();
   player_choice_val = player_selected_choice();
+
+  if (player_choice_val < 0) {
+    update_text_content('winner', 'please make a selection...');
+    return false;
+  }
   
   reset_display();
   update_choice_display(2, computer_choice_val);
@@ -56,6 +61,8 @@ function play() {
 function reset_game() {
   reset_display();
   reset_tournament_table();
+  update_text_content('winner', '---');
+  set_ready_to_play(true);
 }
 
 /**
@@ -67,7 +74,11 @@ function computer_random_choice() {
 }
 
 function player_selected_choice() {
-  return document.querySelector("input[type='radio'][name=item]:checked").value;
+  try {
+    return document.querySelector("input[type='radio'][name=item]:checked").value;
+  } catch (TypeError) {
+    return -1;
+  }
 }
 
 function winner(p1_choice, p2_choice) {
@@ -195,11 +206,17 @@ function call_tie() {
   update_tournament_table_row(0,0);
 }
 
+function set_ready_to_play(enabled) {
+  console.log("Changing shoot button status to " + enabled);
+  button = document.getElementById('shoot_button');
+  button.disabled = !enabled;
+}
+
 function next_match() {
   next_match_number = get_match_number() + 1;
   if(next_match_number > 3) {
     update_text_content('winner', 'Done');
-    // todo: disable shoot button
+    set_ready_to_play(false);
   } else {
     set_match_number(next_match_number);
   }
