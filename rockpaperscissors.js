@@ -13,7 +13,7 @@
  * The author is not primarily a JavaScript developer so choices in 
  * variable names and style are the personal preference of the author
  * and not meant to indicate the style that you should use. Consult with
- * best practice 
+ * best practice for your own work.
  * 
  * Written by Frank Rietta
  * Copyright (C) 2024 Rietta Inc. 
